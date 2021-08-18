@@ -1,0 +1,381 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.user div {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+
+
+.user li label {
+    margin: auto;
+    font-size: xx-large;
+    font-family: fantasy;
+}
+
+.coin button {
+    background-color: rgba(1, 1, 1, 0);
+    border: none;
+}
+
+
+
+    .coin button img {
+        height: 100px;
+        width: 100px;
+    }
+
+        .coin .enabled:hover {
+            height: 120px;
+            width: 120px;
+            margin: auto;
+        }
+
+.coin .disabled{
+    filter: grayscale(100%);
+    opacity: 0.4;
+}
+
+.coin button {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.coin {
+    margin: 100px 20% 30px 20%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.screen {
+    display: flex;
+    justify-content: flex-end;
+}
+
+    .screen input {
+        width: 200px;
+        height: 30px;
+    }
+
+ul {
+    list-style: none;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 500px;
+    max-width: 800px;
+}
+
+    ul li img {
+        height: 100px;
+        width: auto;
+    }
+
+    ul li .img {
+        filter: grayscale(100%);
+    }
+
+.user ul li {
+    margin: 1px 0 0 5%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.odd {
+    background-color: rgb(172, 172, 172);
+}
+
+.even {
+    background-color: rgb(216, 216, 216);
+}
+
+.user li button {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    background-color: rgba(1, 1, 1, 0);
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+body > div {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.user {
+    width: 100%;
+}
+
+body div div ul {
+    min-width: 150px;
+    padding: 0;
+}
+
+body div div {
+    margin-left: 40px;
+}
+
+
+
+.adcoin img {
+    height: 100px;
+    width: 100px;
+}
+
+.adcoin {
+    display: flex;
+    margin: 100px 20% 30px 20%;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background-color: rgba(1, 1, 1, 0);
+    border: none;
+    height: 150px;
+}
+
+    .adcoin input {
+        width: 100px;
+        border-radius: 10px;
+    }
+
+input:focus {
+    outline: none;
+}
+
+.drin {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+    .drin .drinks {
+        width: 100%;
+    }
+
+        .drin .drinks li {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between;
+            margin-top: 1px;
+            border-radius: 10px;
+        }
+
+            .drin .drinks li label {
+                margin: auto;
+                font-size: xx-large;
+                font-family: fantasy;
+            }
+
+            .drin .drinks li div {
+                min-width: 120px;
+                display: flex;
+                justify-content: center;
+            }
+
+                .drin .drinks li div img {
+                    margin: auto;
+                }
+
+        .drin .drinks button {
+            width: 100%;
+            margin-top: 1px;
+            border-radius: 10px;
+            font-size: xx-large;
+            font-family: fantasy;
+        }
+
+        .drin .drinks li p input {
+            width: 40px;
+            height: 40px;
+            margin-left: 50px;
+            border-radius: 10px;
+        }
+
+.admin div button {
+    margin: 0 40% 0 40%;
+    width: 20%;
+    margin-top: 1px;
+    border-radius: 10px;
+    font-size: xx-large;
+    font-family: fantasy;
+}
+
+.admin div {
+    justify-content: center;
+}
+
+.drin .drinks li p {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.drin .drinks li button {
+    width: 100%;
+    height: 40px;
+    font-size: large;
+    font-family: fantasy;
+}
+
+.drin .drinks li > .edit {
+    margin-left: 0;
+    width: 100%;
+}
+
+    .drin .drinks li > .edit > form {
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        height: 500px;
+    }
+
+        .drin .drinks li > .edit > form > div {
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between;
+            font-size: xx-large;
+            font-family: fantasy;
+        }
+
+            .drin .drinks li > .edit > form > div > label {
+                width: 200px;
+                margin: 0;
+            }
+
+            .drin .drinks li > .edit > form > div > input {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+        .drin .drinks li > .edit > form > button {
+            height: 40px;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+.hideElem {
+    display: none !important;
+}
+
+.form-group {
+    padding: 0;
+    margin: 1em auto 0 1em
+}
+
+    .form-group input[type=file] {
+        outline: 0;
+        opacity: 0;
+        pointer-events: none;
+        user-select: none
+    }
+
+
+    .form-group .label i {
+        display: block;
+        font-size: 42px;
+        padding-bottom: 16px
+    }
+
+    .form-group .label i, .example-1 .label .title {
+        color: grey;
+        transition: 200ms color
+    }
+
+    .form-group .label:hover {
+        border: 2px solid #000
+    }
+
+        .form-group .label:hover i, .example-1 .label:hover .title {
+            color: #000
+        }
+
+        button:focus{
+            outline:none;
+        }
+
+        form > .contain{
+            display:flex;
+            flex-flow:row;
+            justify-content:space-between;
+        }

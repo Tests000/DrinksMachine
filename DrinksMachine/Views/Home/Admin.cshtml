@@ -1,0 +1,90 @@
+﻿@{
+    var drinks = (List<Drink>)ViewData["drinks"];
+    var coins = (List<Coin>)ViewData["coins"];
+    bool v = false;
+}
+<form class="admin" method="post">
+    <div>
+        <div class="adcoin">
+            @foreach (var item in coins)
+            {
+                var id = "r" + item.Dignity;
+                var path = "/img/" + item.Dignity + "r.png";
+                var name = "r" + item.Dignity + "enable";
+                var val = item.Enabled ? "on" : "off";
+            <div>
+                <img src="@path">
+                <input type="number" min="0" name="@id" value="@item.Count">
+                @if (item.Enabled)
+                {
+                    <input type="checkbox" name="@name" checked="checked">
+                }
+                else
+                {
+                    <input type="checkbox" name="@name">
+                }
+            </div>
+            }
+        </div>
+        <button>
+            save
+        </button>
+    </div>
+</form>
+<div class="drin">
+    <ul class="drinks">
+        @if (drinks != null && drinks.Count > 0)
+        {
+            foreach (var elem in drinks)
+            {
+                if (!v)
+                {
+                    <li class="odd">
+                        <div>
+                            @Html.Raw("<img src=\"data:image/jpeg;base64,"+Convert.ToBase64String(elem.image)+"\"/>")
+                        </div>
+                        <label>@elem.Name</label>
+                        <label>@elem.Price</label>
+                        <p>
+                            <input disabled="disabled" type="number" min="0" value="@elem.Count">
+                            <button type="button" id='@elem.Id' onclick="Edit(this, id)">Edit</button>
+                        </p>
+                    </li>
+                }
+                else
+                {
+                    <li class="even">
+                        <div>
+                            @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(elem.image) + "\"/>")
+                        </div>
+                        <label>@elem.Name</label>
+                        <label>@elem.Price</label>
+                        <p>
+                            <input disabled="disabled" type="number" min="0" value="@elem.Count">
+                            <button type="button" id='@elem.Id' onclick="Edit(this, id)">Edit</button>
+                        </p>
+                    </li>
+                }
+                v = !v;
+
+            }
+        }
+        @if (!v)
+        {
+        <li class="odd">
+            <button id='-1' onclick="Edit(this, id)">
+                Add
+            </button>
+        </li>
+        }
+        else
+        {
+        <li class="even">
+            <button id='-1' onclick="Edit(this, id)">
+                Add
+            </button>
+        </li>
+        }
+    </ul>
+</div>
+<script src="~/js/Admin.js"></script>

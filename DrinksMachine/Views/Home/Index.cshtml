@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    bool v = false;
+}
+
+@model List<Drink>
+<div class="screen">
+    @if (ViewData["res"] == null)
+    {
+        <input id="screen" type="text" disabled="disabled" value="Вы внесли 0 рублей">
+    }
+    else
+    {
+        <input id="screen" type="text" disabled="disabled" value="@ViewData["res"]">
+    }
+</div>
+<form  method="post">
+    <div class="coin">
+        @foreach (var item in (List<Coin>)ViewData["money"])
+        {
+            var path = "/img/" + item.Dignity + "r.png";
+            var id = "r"+ item.Dignity;
+            if (item.Enabled)
+            {
+                <input class="hideElem" type="number" id="@id" name="@id" value="0" />
+                <button type="button" onclick="AddMoney(@item.Dignity)">
+                    <img class="enabled" src="@path">
+                </button>
+            }
+            else
+            {
+                <input class="hideElem" type="number" id="@id" name="@id" value="0" />
+                <button disabled="disabled" onclick="AddMoney(@item.Dignity)">
+                    <img class="disabled" src="@path">
+                </button>
+            }
+        }
+    </div>
+    <div class="contain">
+            <div class="user">
+                <ul class="drinks">
+                    @if (Model.Count > 0)
+                    {
+                        foreach (var elem in Model)
+                        {
+                            if (elem.Count > 0)
+                            {
+                                if (!v)
+                                {
+                                    <li class="odd">
+                                        
+                                        <input class="hideElem" value="@elem.Price" />
+                                        <button name='DrinkID' value="@elem.Id">
+                                            <div>
+                                                @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(elem.image) + "\"/>")
+                                            </div>
+                                            <label>@elem.Name</label>
+                                            <label>@elem.Price р</label>
+                                        </button>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="even">
+                                        
+                                        <input class="hideElem" value="@elem.Price" />
+                                        <button name='DrinkID' value="@elem.Id">
+                                            <div>
+                                                @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(elem.image) + "\"/>")
+                                            </div>
+                                            <label>@elem.Name</label>
+                                            <label>@elem.Price р</label>
+                                        </button>
+                                    </li>
+                                }
+                                v = !v;
+                            }
+
+                        }
+                    }
+                </ul>
+
+            </div>
+            <div>
+
+                <h2>Заберите вашу сдачу</h2>
+                <ul class="change">
+                    @if (ViewData["change"] != null)
+                        foreach (var item in (List<int>)ViewData["change"])
+                        {
+                            var path = "/img/" + item + "r.png";
+                            <li>
+                                <img src="@path">
+                            </li>
+                        }
+                </ul>
+            </div>
+    </div>
+</form>
+<script src="~/js/main.js"></script>
